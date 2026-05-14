@@ -222,14 +222,20 @@
 /* MOBILE */
 @media (max-width: 767px) {
   .hero-highlights {
+    display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
+
     overflow-x: auto;
+    overflow-y: hidden;
+
+    width: 100%;
 
     gap: 8px;
     padding: 10px 12px 2px;
 
     scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   .hero-highlights::-webkit-scrollbar {
@@ -242,6 +248,7 @@
     padding: 5px 10px;
   }
 }
+
 .hero-dots {
   position: absolute;
   bottom: 14px;
@@ -265,9 +272,7 @@
   background: var(--yellow);
   width: 24px;
   border-radius: 4px;
-}
-    
-    /* ===== ANIMATION ===== */
+}    /* ===== ANIMATION ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;
