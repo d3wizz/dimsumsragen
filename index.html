@@ -84,18 +84,25 @@
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
-  text-align: center;
-  padding: 20px;
+  text-align: left;
+  padding: 20px 24px;
   z-index: 2;
 }
-
+.hero-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  max-width: 850px;
+}
 .hero-logo {
-  width: 130px;
+  width: 78px;
   height: auto;
-  margin-bottom: 14px;
+  margin-bottom: 0;
+  flex-shrink: 0;
+
   filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
   animation: fadeDown 0.8s ease both;
 }
@@ -103,7 +110,11 @@
 /* Desktop logo */
 @media (min-width: 768px) {
   .hero-logo {
-    width: 170px;
+    width: 105px;
+  }
+
+  .hero-overlay {
+    padding-left: 70px;
   }
 }
 
@@ -131,7 +142,7 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   animation: fadeUp 0.8s 0.5s ease both;
 }
 
@@ -176,7 +187,7 @@
 
 .hero-highlights {
   position: absolute;
-  bottom: 42px; /* dinaikkan supaya tidak tabrakan dengan dots */
+  bottom: 42px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -224,8 +235,8 @@
   width: 24px;
   border-radius: 4px;
 }
-
-/* ===== ANIMATION ===== */
+    
+    /* ===== ANIMATION ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -257,7 +268,7 @@
   .hero-sub {
     font-size: 0.88rem;
     line-height: 1.5;
-    padding: 0 10px;
+    padding: 0;
   }
 
   .hero-cta {
@@ -279,9 +290,7 @@
     font-size: 0.68rem;
     padding: 5px 12px;
   }
-}
-
-    /* ===== SECTION BASE ===== */
+}    /* ===== SECTION BASE ===== */
     section { padding: 80px 20px; }
 
     .container { max-width: 1140px; margin: 0 auto; }
@@ -1106,14 +1115,22 @@
   </div>
 
   <div class="hero-overlay">
-    <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778748526/Logodimsumsragen_igqfbh.png" alt="Dimsum Jakarta Mas Hari" class="hero-logo" />
+       <div class="hero-top">
+    <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778748526/Logodimsumsragen_igqfbh.png"
+         alt="Dimsum Jakarta Mas Hari"
+         class="hero-logo" />
+
     <h1 class="hero-headline">
-  <span class="white-text">Supplier & Produsen Dimsum</span><br>
-  <span class="red-text">Jakarta</span>
- <span class="white-text"> hadir di </span>
-<span class="red-text">Sragen</span>
-</h1>
-    <p class="hero-sub">Dimsum homemade favorite di Jakarta, rasa premium untuk wedding, hajatan, catering, arisan, frozen food, dan reseller area Sragen.</p>
+      <span class="white-text">Supplier & Produsen Dimsum</span><br>
+      <span class="red-text">Jakarta</span>
+      <span class="white-text"> hadir di </span>
+      <span class="red-text">Sragen</span>
+    </h1>
+      </div>
+    <p class="hero-sub">
+    Dimsum homemade favorite di Jakarta, rasa premium untuk wedding,
+    hajatan, catering, arisan, frozen food, dan reseller area Sragen.
+  </p>
     <div class="hero-cta">
       <a href="https://wa.me/6282227608986?text=Halo,%20saya%20mau%20pesan%20dimsum" class="btn-wa" target="_blank">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.558 4.14 1.535 5.873L.057 23.5l5.76-1.508A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.667-.5-5.2-1.376l-.373-.222-3.419.897.911-3.328-.243-.386A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
