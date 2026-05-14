@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-   /* ===== HERO ===== */
+  /* ===== HERO ===== */
 #hero {
   position: relative;
   width: 100%;
@@ -176,7 +176,7 @@
 
 .hero-highlights {
   position: absolute;
-  bottom: 18px;
+  bottom: 42px; /* dinaikkan supaya tidak tabrakan dengan dots */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -185,6 +185,7 @@
   justify-content: center;
   z-index: 3;
   animation: fadeUp 0.8s 0.7s ease both;
+  padding: 0 16px;
 }
 
 .highlight-pill {
@@ -201,7 +202,7 @@
 
 .hero-dots {
   position: absolute;
-  bottom: 12px;
+  bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -215,13 +216,69 @@
   border-radius: 50%;
   background: rgba(255,255,255,0.4);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 
 .hero-dot.active {
   background: var(--yellow);
   width: 24px;
   border-radius: 4px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: 1.9rem;
+  }
+
+  .hero-sub {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    padding: 0 10px;
+  }
+
+  .hero-cta {
+    gap: 10px;
+  }
+
+  .btn-wa,
+  .btn-menu {
+    padding: 11px 20px;
+    font-size: 0.88rem;
+  }
+
+  .hero-highlights {
+    gap: 8px;
+    bottom: 44px;
+  }
+
+  .highlight-pill {
+    font-size: 0.68rem;
+    padding: 5px 12px;
+  }
 }
 
     /* ===== SECTION BASE ===== */
