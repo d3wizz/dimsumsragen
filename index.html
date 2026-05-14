@@ -142,7 +142,12 @@
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: flex-start;
+
+  justify-content: center; /* tombol jadi center */
+  align-items: center;
+
+  width: 100%;
+
   animation: fadeUp 0.8s 0.5s ease both;
 }
 
@@ -156,6 +161,8 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+
   gap: 8px;
   box-shadow: 0 6px 20px rgba(232,21,26,0.45);
   transition: transform 0.2s, box-shadow 0.2s;
@@ -272,7 +279,7 @@
   background: var(--yellow);
   width: 24px;
   border-radius: 4px;
-}    /* ===== ANIMATION ===== */
+}}    /* ===== ANIMATION ===== */
 @keyframes fadeUp {
   from {
     opacity: 0;
