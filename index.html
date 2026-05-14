@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Supplier & Produsen Dimsum Sragen | Dimsum Jakarta Mas Hari</title>
+  <meta name="description" content="Dimsum enak di Sragen untuk wedding, hajatan, catering, dan frozen food. Harga murah, homemade, halal, dan bisa delivery area Sragen dan sekitarnya." />
+  <link rel="icon" href="https://res.cloudinary.com/dyvav3opv/image/upload/v1778732789/file_000000000b9071fa8418a9de08464d58_y0lo8j.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --yellow: #FFD700;
+      --yellow-light: #FFF176;
+      --orange: #E8151A;
+      --orange-mid: #c8100f;
+      --red: #E8151A;
+      --red-dark: #B5000A;
+      --cream: #FFFDE7;
+      --dark: #8B0000;
+      --text: #5A0000;
+      --text-light: #9B2020;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #C83724;
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    /* ===== HERO ===== */
+    #hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+
+    .hero-slides {
+      display: flex;
+      width: 700%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
+    }
+
+    .hero-slide {
+      width: calc(100% / 7);
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      flex-shrink: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(160deg, rgba(180,0,10,0.72) 0%, rgba(232,21,26,0.45) 55%, rgba(255,215,0,0.15) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 0 20px;
+      z-index: 2;
+    }
+
+    .hero-logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+      animation: fadeDown 0.8s ease both;
+    }
+
+    .hero-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--yellow);
+      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+      line-height: 1.15;
+      margin-bottom: 14px;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+
+    .hero-sub {
+      font-size: clamp(0.88rem, 1.8vw, 1.05rem);
+      color: #ffe9c0;
+      max-width: 580px;
+      margin-bottom: 26px;
+      line-height: 1.65;
+      animation: fadeUp 0.8s 0.35s ease both;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+      animation: fadeUp 0.8s 0.5s ease both;
+    }
+
+    .btn-wa {
+      background: var(--red);
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(232,21,26,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232,21,26,0.55); }
+
+    .btn-menu {
+      background: transparent;
+      color: var(--yellow);
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid var(--yellow);
+      box-shadow: 0 6px 20px rgba(255,215,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    }
+    .btn-menu:hover { transform: translateY(-2px); background: rgba(255,215,0,0.12); box-shadow: 0 10px 28px rgba(255,215,0,0.3); }
+
+    .hero-highlights {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      z-index: 3;
+      animation: fadeUp 0.8s 0.7s ease both;
+    }
+
+    .highlight-pill {
+      background: rgba(255,215,0,0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,215,0,0.4);
+      color: var(--yellow-light);
+      padding: 7px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .hero-dots {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .hero-dot.active {
+      background: var(--yellow);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* ===== SECTION BASE ===== */
+    section { padding: 80px 20px; }
+
+    .container { max-width: 1140px; margin: 0 auto; }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 900;
+      color: var(--red);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 1rem;
+      margin-bottom: 50px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ===== KEUNGGULAN ===== */
+    #keunggulan {
+      background: linear-gradient(135deg, #FFF9C4 0%, #FFF176 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #keunggulan::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,21,26,0.07), transparent 70%);
+    }
+
+    .keunggulan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .keunggulan-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 4px 20px rgba(232,21,26,0.08);
+      border-left: 5px solid var(--red);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .keunggulan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(232,21,26,0.15);
+    }
+
+    .keunggulan-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--yellow), var(--red));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .keunggulan-text h3 {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--red-dark);
+      margin-bottom: 4px;
+    }
+
+    .keunggulan-text p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    /* ===== MENU PRODUK ===== */
+    #menu { background: #FFF176; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 6px 30px rgba(232,21,26,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(232,21,26,0.15);
+    }
+
+    .product-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.07);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--red);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .product-body {
+      padding: 20px;
+    }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--red-dark);
+      margin-bottom: 8px;
+    }
+
+    .product-detail {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .product-variants {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .variant-chip {
+      background: #fff9c4;
+      border: 1px solid #ffd700;
+      color: var(--red);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .variant-chip.selected,
+    .variant-chip:hover {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--red);
+      margin-bottom: 12px;
+    }
+
+    .product-price span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .qty-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .qty-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--red);
+      background: white;
+      color: var(--red);
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .qty-btn:hover { background: var(--red); color: white; }
+
+    .qty-val {
+      font-size: 1.1rem;
+      font-weight: 700;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .qty-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    .btn-checkout {
+      width: 100%;
+      padding: 13px;
+      border-radius: 50px;
+      border: none;
+      background: var(--red);
+      color: white;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(232,21,26,0.3);
+    }
+
+    .btn-checkout:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(232,21,26,0.45);
+    }
+
+    .btn-checkout:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      box-shadow: none;
+      opacity: 0.7;
+    }
+
+    .min-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: var(--red);
+      margin-top: 6px;
+      font-weight: 600;
+    }
+
+    /* ===== PAKET OCCASION ===== */
+    #occasion {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 60%, #c8100f 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #occasion::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    #occasion .section-title { color: var(--yellow); }
+    #occasion .section-sub { color: rgba(255,255,255,0.85); }
+
+    .occasion-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .occasion-inner { grid-template-columns: 1fr; gap: 30px; }
+    }
+
+    .occasion-left .section-title { text-align: left; }
+    .occasion-left .section-sub { text-align: left; margin-left: 0; }
+
+    .occasion-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .occasion-tag {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .occasion-benefits {
+      list-style: none;
+      margin-bottom: 32px;
+    }
+
+    .occasion-benefits li {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      padding: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .occasion-min {
+      background: rgba(255,215,0,0.2);
+      border: 1px solid var(--yellow);
+      color: var(--yellow-light);
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      display: inline-block;
+      margin-bottom: 24px;
+    }
+
+    .btn-occasion {
+      background: var(--yellow);
+      color: var(--red-dark);
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: all 0.2s;
+    }
+    .btn-occasion:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(0,0,0,0.35); }
+
+    .occasion-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .occasion-card {
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 24px 18px;
+      text-align: center;
+      color: white;
+      transition: background 0.2s;
+    }
+    .occasion-card:hover { background: rgba(255,255,255,0.2); }
+
+    .occasion-card .oc-icon { font-size: 2rem; margin-bottom: 10px; }
+    .occasion-card .oc-name { font-weight: 700; font-size: 0.95rem; }
+
+    /* ===== TESTIMONI ===== */
+    #testimoni {
+      background: #FFF9C4;
+      overflow: hidden;
+    }
+
+    .testi-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .testi-track-wrap::before,
+    .testi-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 2;
+    }
+
+    .testi-track-wrap::before {
+      left: 0;
+      background: linear-gradient(to right, #FFF9C4, transparent);
+    }
+
+    .testi-track-wrap::after {
+      right: 0;
+      background: linear-gradient(to left, #FFF9C4, transparent);
+    }
+
+    .testi-track {
+      display: flex;
+      gap: 20px;
+      animation: scrollLeft 28s linear infinite;
+      width: max-content;
+    }
+
+    .testi-track:hover { animation-play-state: paused; }
+
+    @keyframes scrollLeft {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .testi-card {
+      background: white;
+      border-radius: 20px;
+      padding: 24px;
+      width: 280px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(232,21,26,0.08);
+      border-top: 4px solid var(--red);
+    }
+
+    .testi-stars { color: var(--yellow); margin-bottom: 10px; font-size: 1rem; }
+
+    .testi-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--text);
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .testi-author { font-weight: 700; color: var(--red); font-size: 0.85rem; }
+
+    /* ===== KLIEN ===== */
+    #klien {
+      background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
+      text-align: center;
+    }
+
+    #klien .section-title { color: var(--yellow); }
+    #klien .section-sub { color: rgba(255,255,255,0.7); }
+
+    .klien-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .klien-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: rgba(255,255,255,0.85);
+      padding: 10px 24px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .klien-chip:hover {
+      background: rgba(255,215,0,0.12);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* ===== FAQ ===== */
+    #faq { background: #FFF9C4; }
+
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(232,21,26,0.07);
+      border-left: 5px solid var(--yellow);
+    }
+
+    .faq-q {
+      padding: 18px 22px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 700;
+      color: var(--red-dark);
+      font-size: 0.92rem;
+      user-select: none;
+    }
+
+    .faq-q:hover { background: #fffde7; }
+
+    .faq-arrow {
+      color: var(--red);
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding: 0 22px;
+    }
+
+    .faq-item.open .faq-a {
+      max-height: 200px;
+      padding: 0 22px 18px;
+    }
+
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+    /* ===== MAP ===== */
+    #map-section {
+      background: white;
+      padding: 0;
+    }
+
+    .map-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      .map-inner { grid-template-columns: 1fr; }
+    }
+
+    .map-info {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      padding: 60px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .map-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--yellow);
+      margin-bottom: 16px;
+    }
+
+    .map-info p {
+      color: rgba(255,255,255,0.9);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .map-address {
+      background: rgba(255,215,0,0.15);
+      border-radius: 12px;
+      padding: 16px 20px;
+      color: white;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,215,0,0.3);
+    }
+
+    .map-embed {
+      height: 400px;
+      width: 100%;
+      min-height: 300px;
+    }
+
+    .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+    /* ===== CTA PENUTUP ===== */
+    #cta-penutup {
+      background: linear-gradient(135deg, var(--yellow) 0%, #FFD000 50%, var(--yellow-light) 100%);
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #cta-penutup::before {
+      content: '🥟';
+      font-size: 200px;
+      position: absolute;
+      left: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.08;
+    }
+
+    #cta-penutup::after {
+      content: '🥟';
+      font-size: 200px;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%) scaleX(-1);
+      opacity: 0.08;
+    }
+
+    #cta-penutup h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--red);
+      margin-bottom: 14px;
+    }
+
+    #cta-penutup p {
+      color: rgba(139,0,0,0.75);
+      font-size: 1rem;
+      margin-bottom: 36px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-final-wa {
+      background: var(--red);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 1rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 8px 30px rgba(232,21,26,0.4);
+      transition: all 0.2s;
+    }
+    .btn-final-wa:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(232,21,26,0.5); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--red-dark);
+      color: rgba(255,255,200,0.85);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.85rem;
+    }
+    footer span { color: var(--yellow); font-weight: 700; }
+
+    /* ===== FLOATING WA ===== */
+    #float-wa {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .float-wa-bubble {
+      background: white;
+      border-radius: 12px;
+      padding: 8px 14px;
+      font-size: 0.8rem;
+      color: var(--text);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      font-weight: 600;
+      animation: popUp 0.3s ease;
+      max-width: 200px;
+    }
+
+    .float-wa-btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(37,211,102,0.5);
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    .float-wa-btn svg { width: 32px; height: 32px; fill: white; }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
+      50% { box-shadow: 0 6px 30px rgba(37,211,102,0.8), 0 0 0 10px rgba(37,211,102,0.1); }
+    }
+
+    /* ===== LIVE CHECKOUT POPUP ===== */
+    #live-checkout {
+      position: fixed;
+      bottom: 100px;
+      left: 24px;
+      z-index: 998;
+      background: white;
+      border-radius: 14px;
+      padding: 12px 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 270px;
+      transform: translateX(-120%);
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    #live-checkout.show { transform: translateX(0); }
+
+    .checkout-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--yellow), var(--red));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .checkout-text {
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .checkout-text strong {
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .checkout-text small { color: #aaa; }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes popUp {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      section { padding: 60px 16px; }
+      .hero-highlights { display: none; }
+      .map-info { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HERO SLIDER ===== -->
+<section id="hero">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735480/Hero-01_htzunz.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735649/1778731234507_z9xaeb.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735485/Hero-02_ndn2b4.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735482/Hero-03_ai7ewc.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735485/Hero-04_rtrxl6.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735487/Hero-05_b6bggu.png')"></div>
+    <div class="hero-slide" style="background-image:url('https://res.cloudinary.com/dyvav3opv/image/upload/v1778735485/Hero-06_yiussl.png')"></div>
+  </div>
+
+  <div class="hero-overlay">
+    <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778732789/file_000000000b9071fa8418a9de08464d58_y0lo8j.png" alt="Dimsum Jakarta Mas Hari" class="hero-logo" />
+    <h1 class="hero-headline">Supplier & Produsen<br>Dimsum Sragen</h1>
+    <p class="hero-sub">Dimsum homemade premium untuk wedding, hajatan, catering, arisan, frozen food, dan reseller area Sragen.</p>
+    <div class="hero-cta">
+      <a href="https://wa.me/6282227608986?text=Halo,%20saya%20mau%20pesan%20dimsum" class="btn-wa" target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.558 4.14 1.535 5.873L.057 23.5l5.76-1.508A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.667-.5-5.2-1.376l-.373-.222-3.419.897.911-3.328-.243-.386A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        Pesan Sekarang
+      </a>
+      <a href="#menu" class="btn-menu">Lihat Menu ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-dots" id="heroDots">
+    <div class="hero-dot active" onclick="goSlide(0)"></div>
+    <div class="hero-dot" onclick="goSlide(1)"></div>
+    <div class="hero-dot" onclick="goSlide(2)"></div>
+    <div class="hero-dot" onclick="goSlide(3)"></div>
+    <div class="hero-dot" onclick="goSlide(4)"></div>
+  </div>
+
+  <div class="hero-highlights">
+    <span class="highlight-pill">✅ Fresh dibuat harian</span>
+    <span class="highlight-pill">✅ Halal & higienis</span>
+    <span class="highlight-pill">✅ Bisa frozen & matang</span>
+    <span class="highlight-pill">✅ Melayani area Sragen</span>
+  </div>
+</section>
+
+<!-- ===== MENU PRODUK ===== -->
+<section id="menu">
+  <div class="container">
+    <h2 class="section-title reveal">Menu Dimsum Favorit</h2>
+    <p class="section-sub reveal">Pilih varian dimsum favorit Anda dan langsung checkout via WhatsApp.</p>
+
+    <div class="menu-grid reveal">
+
+      <!-- PRODUK 1 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/v1778717265/Dimsum-original_fvxi5z.jpg" alt="Dimsum Original Sragen" loading="lazy" />
+          <div class="product-badge">Best Seller</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Dimsum Original</div>
+          <div class="product-detail">Isi 4 pcs per pax · Free sauce sambal</div>
+          <div class="product-variants" id="var1">
+            <span class="variant-chip selected" onclick="selectVar('var1',this)">Ayam</span>
+            <span class="variant-chip" onclick="selectVar('var1',this)">Smoke Beef</span>
+            <span class="variant-chip" onclick="selectVar('var1',this)">Udang</span>
+            <span class="variant-chip" onclick="selectVar('var1',this)">Kepiting</span>
+            <span class="variant-chip" onclick="selectVar('var1',this)">Wortel</span>
+            <span class="variant-chip" onclick="selectVar('var1',this)">Jamur</span>
+          </div>
+          <div class="product-price">Rp13.000 <span>/ pax</span></div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('q1',-1)">−</button>
+            <span class="qty-val" id="q1">5</span>
+            <button class="qty-btn" onclick="changeQty('q1',1)">+</button>
+            <span class="qty-label">pax (min. 5)</span>
+          </div>
+          <button class="btn-checkout" id="co1" onclick="checkout('Dimsum Original',13000,'q1','var1')">
+            🛒 Checkout via WhatsApp
+          </button>
+          <p class="min-note" id="note1"></p>
+        </div>
+      </div>
+
+      <!-- PRODUK 2 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/v1778717267/Dimsum-premium_gjtgm8.jpg" alt="Dimsum Premium Sragen" loading="lazy" />
+          <div class="product-badge">Premium</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Dimsum Premium</div>
+          <div class="product-detail">Isi 4 pcs per pax · Free sauce sambal</div>
+          <div class="product-variants" id="var2">
+            <span class="variant-chip selected" onclick="selectVar('var2',this)">Ayam</span>
+            <span class="variant-chip" onclick="selectVar('var2',this)">Smoke Beef</span>
+            <span class="variant-chip" onclick="selectVar('var2',this)">Udang</span>
+            <span class="variant-chip" onclick="selectVar('var2',this)">Kepiting</span>
+            <span class="variant-chip" onclick="selectVar('var2',this)">Wortel</span>
+            <span class="variant-chip" onclick="selectVar('var2',this)">Jamur</span>
+          </div>
+          <div class="product-price">Rp15.000 <span>/ pax</span></div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('q2',-1)">−</button>
+            <span class="qty-val" id="q2">5</span>
+            <button class="qty-btn" onclick="changeQty('q2',1)">+</button>
+            <span class="qty-label">pax (min. 5)</span>
+          </div>
+          <button class="btn-checkout" id="co2" onclick="checkout('Dimsum Premium',15000,'q2','var2')">
+            🛒 Checkout via WhatsApp
+          </button>
+          <p class="min-note" id="note2"></p>
+        </div>
+      </div>
+
+      <!-- PRODUK 3 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/v1778717267/Dimsum-mentai-original_zh1o6e.jpg" alt="Dimsum Mentai Original Sragen" loading="lazy" />
+          <div class="product-badge">Mentai Spec</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Dimsum Mentai Original</div>
+          <div class="product-detail">Isi 4 pcs per pax · Sauce mentai + sambal</div>
+          <div class="product-variants" id="var3">
+            <span class="variant-chip selected" onclick="selectVar('var3',this)">Ayam</span>
+            <span class="variant-chip" onclick="selectVar('var3',this)">Smoke Beef</span>
+            <span class="variant-chip" onclick="selectVar('var3',this)">Udang</span>
+            <span class="variant-chip" onclick="selectVar('var3',this)">Kepiting</span>
+            <span class="variant-chip" onclick="selectVar('var3',this)">Wortel</span>
+            <span class="variant-chip" onclick="selectVar('var3',this)">Jamur</span>
+          </div>
+          <div class="product-price">Rp17.000 <span>/ pax</span></div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('q3',-1)">−</button>
+            <span class="qty-val" id="q3">5</span>
+            <button class="qty-btn" onclick="changeQty('q3',1)">+</button>
+            <span class="qty-label">pax (min. 5)</span>
+          </div>
+          <button class="btn-checkout" id="co3" onclick="checkout('Dimsum Mentai Original',17000,'q3','var3')">
+            🛒 Checkout via WhatsApp
+          </button>
+          <p class="min-note" id="note3"></p>
+        </div>
+      </div>
+
+      <!-- PRODUK 4 -->
+      <div class="product-card">
+        <div class="product-img-wrap">
+          <img src="https://res.cloudinary.com/diylz44cu/image/upload/v1778717266/Dimsum-mentai-premium_bnlw63.jpg" alt="Dimsum Mentai Premium Sragen" loading="lazy" />
+          <div class="product-badge">Top Pick</div>
+        </div>
+        <div class="product-body">
+          <div class="product-name">Dimsum Mentai Premium</div>
+          <div class="product-detail">Isi 4 pcs per pax · Free sauce sambal</div>
+          <div class="product-variants" id="var4">
+            <span class="variant-chip selected" onclick="selectVar('var4',this)">Ayam</span>
+            <span class="variant-chip" onclick="selectVar('var4',this)">Smoke Beef</span>
+            <span class="variant-chip" onclick="selectVar('var4',this)">Udang</span>
+            <span class="variant-chip" onclick="selectVar('var4',this)">Kepiting</span>
+            <span class="variant-chip" onclick="selectVar('var4',this)">Wortel</span>
+            <span class="variant-chip" onclick="selectVar('var4',this)">Jamur</span>
+          </div>
+          <div class="product-price">Rp19.000 <span>/ pax</span></div>
+          <div class="qty-row">
+            <button class="qty-btn" onclick="changeQty('q4',-1)">−</button>
+            <span class="qty-val" id="q4">5</span>
+            <button class="qty-btn" onclick="changeQty('q4',1)">+</button>
+            <span class="qty-label">pax (min. 5)</span>
+          </div>
+          <button class="btn-checkout" id="co4" onclick="checkout('Dimsum Mentai Premium',19000,'q4','var4')">
+            🛒 Checkout via WhatsApp
+          </button>
+          <p class="min-note" id="note4"></p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PAKET OCCASION ===== -->
+<section id="occasion">
+  <div class="container">
+    <div class="occasion-inner">
+      <div class="occasion-left">
+        <h2 class="section-title reveal">Paket Dimsum untuk Wedding & Hajatan</h2>
+        <p class="section-sub reveal">Kami melayani berbagai acara besar dengan paket spesial yang disesuaikan.</p>
+        <div class="occasion-list reveal">
+          <span class="occasion-tag">💍 Wedding</span>
+          <span class="occasion-tag">🎊 Hajatan</span>
+          <span class="occasion-tag">🙏 Syukuran</span>
+          <span class="occasion-tag">👗 Arisan</span>
+          <span class="occasion-tag">🏢 Gathering</span>
+          <span class="occasion-tag">👨‍👩‍👧 Keluarga</span>
+        </div>
+        <ul class="occasion-benefits reveal">
+          <li>✅ Harga lebih hemat untuk kuantitas besar</li>
+          <li>✅ Packaging lebih rapi dan presentable</li>
+          <li>✅ Cocok untuk tamu ratusan orang</li>
+          <li>✅ Bisa custom request dan rasa</li>
+        </ul>
+        <div class="occasion-min reveal">📦 Minimal 200 pcs per order acara</div>
+        <a href="https://wa.me/6282227608986?text=Halo,%20saya%20ingin%20tanya%20paket%20occasion%20Dimsum%20Jakarta%20Mas%20Hari" class="btn-occasion reveal" target="_blank">
+          💬 Hubungi Kami Untuk Harga Spesial Acara
+        </a>
+      </div>
+      <div class="occasion-right reveal">
+        <div class="occasion-card"><div class="oc-icon">💍</div><div class="oc-name">Wedding</div></div>
+        <div class="occasion-card"><div class="oc-icon">🎊</div><div class="oc-name">Hajatan</div></div>
+        <div class="occasion-card"><div class="oc-icon">🙏</div><div class="oc-name">Syukuran</div></div>
+        <div class="occasion-card"><div class="oc-icon">👗</div><div class="oc-name">Arisan</div></div>
+        <div class="occasion-card"><div class="oc-icon">🏢</div><div class="oc-name">Gathering</div></div>
+        <div class="occasion-card"><div class="oc-icon">👨‍👩‍👧</div><div class="oc-name">Keluarga</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEUNGGULAN ===== -->
+<section id="keunggulan">
+  <div class="container">
+    <h2 class="section-title reveal">Kenapa Pilih Dimsum Jakarta Mas Hari?</h2>
+    <p class="section-sub reveal">Kualitas terjamin, harga bersahabat, cocok untuk semua skala acara.</p>
+    <div class="keunggulan-grid reveal">
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">🫕</div>
+        <div class="keunggulan-text"><h3>Homemade Fresh Setiap Hari</h3><p>Dibuat langsung dari dapur kami, bukan frozen dari luar.</p></div>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">🥟</div>
+        <div class="keunggulan-text"><h3>Isian Full dan Lembut</h3><p>Kulit tipis, isian melimpah, tekstur lembut sempurna.</p></div>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">💰</div>
+        <div class="keunggulan-text"><h3>Harga Terjangkau</h3><p>Mulai Rp13.000 per pax dengan kualitas premium.</p></div>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">🎉</div>
+        <div class="keunggulan-text"><h3>Cocok untuk Acara Besar</h3><p>Wedding, hajatan, catering kantor — semua bisa kami layani.</p></div>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">❄️</div>
+        <div class="keunggulan-text"><h3>Bisa Frozen & Siap Kukus</h3><p>Ideal untuk reseller dan stok rumahan yang praktis.</p></div>
+      </div>
+      <div class="keunggulan-card">
+        <div class="keunggulan-icon">📦</div>
+        <div class="keunggulan-text"><h3>Bisa Custom Paket Acara</h3><p>Kami sesuaikan kebutuhan dan budget acara Anda.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONI ===== -->
+<section id="testimoni">
+  <div class="container">
+    <h2 class="section-title reveal">Apa Kata Pelanggan Kami?</h2>
+    <p class="section-sub reveal">Ribuan pelanggan puas dari Sragen dan sekitarnya.</p>
+  </div>
+  <div class="testi-track-wrap">
+    <div class="testi-track" id="testiTrack">
+      <!-- Original -->
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Dimsumnya lembut dan isi full, tamu acara suka semua."</p><div class="testi-author">— Novi, Sragen</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Packaging rapi dan cocok untuk snack wedding."</p><div class="testi-author">— Dita, Karangmalang</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Frozennya enak dan gampang dijual lagi."</p><div class="testi-author">— Andi, Gemolong</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Dimsumnya datang masih hangat dan sambalnya enak."</p><div class="testi-author">— Siska, Sragen Kota</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Cocok banget buat snack meeting kantor."</p><div class="testi-author">— Rina, Sambung Macan</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Mentainya creamy dan premium banget rasanya."</p><div class="testi-author">— Fajar, Masaran</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Order untuk hajatan keluarga dan banyak yang repeat order."</p><div class="testi-author">— Yuni, Karanganyar</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Pelayanannya cepat dan admin responsif."</p><div class="testi-author">— Aldi, Solo Baru</div></div>
+      <!-- Duplicate for seamless loop -->
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Dimsumnya lembut dan isi full, tamu acara suka semua."</p><div class="testi-author">— Novi, Sragen</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Packaging rapi dan cocok untuk snack wedding."</p><div class="testi-author">— Dita, Karangmalang</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Frozennya enak dan gampang dijual lagi."</p><div class="testi-author">— Andi, Gemolong</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Dimsumnya datang masih hangat dan sambalnya enak."</p><div class="testi-author">— Siska, Sragen Kota</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Cocok banget buat snack meeting kantor."</p><div class="testi-author">— Rina, Sambung Macan</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Mentainya creamy dan premium banget rasanya."</p><div class="testi-author">— Fajar, Masaran</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Order untuk hajatan keluarga dan banyak yang repeat order."</p><div class="testi-author">— Yuni, Karanganyar</div></div>
+      <div class="testi-card"><div class="testi-stars">★★★★★</div><p class="testi-text">"Pelayanannya cepat dan admin responsif."</p><div class="testi-author">— Aldi, Solo Baru</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KLIEN ===== -->
+<section id="klien">
+  <div class="container">
+    <h2 class="section-title reveal">Dipercaya Berbagai Instansi & Acara</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,0.7)">Beberapa instansi dan perusahaan yang pernah memesan dimsum kami.</p>
+    <div class="klien-grid reveal">
+      <div class="klien-chip">🏥 RSUD Gemolong</div>
+      <div class="klien-chip">🏛️ DPRD Sragen</div>
+      <div class="klien-chip">🏘️ Kelurahan Sragen Timur</div>
+      <div class="klien-chip">🏥 Puskesmas Sambung Macan</div>
+      <div class="klien-chip">💍 Acara Wedding Sragen</div>
+      <div class="klien-chip">🏢 Gathering Kantor</div>
+      <div class="klien-chip">🕌 Pengajian & Arisan Keluarga</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq">
+  <div class="container">
+    <h2 class="section-title reveal">Pertanyaan yang Sering Ditanyakan</h2>
+    <p class="section-sub reveal">Ada yang ingin Anda ketahui? Cari jawabannya di sini.</p>
+    <div class="faq-list reveal">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah bisa frozen? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Ya, tersedia frozen dimsum siap kukus. Cocok untuk stok rumahan maupun reseller yang ingin jual kembali dengan mudah.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah bisa untuk wedding? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Bisa. Tersedia paket acara dan paket premium khusus wedding dengan packaging lebih rapi dan harga lebih hemat untuk pembelian besar.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Minimal order berapa? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Mulai dari 5 pax untuk pembelian reguler, tergantung varian yang dipilih. Untuk paket acara minimal 200 pcs.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Apakah bisa kirim luar Sragen? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Bisa, kami melayani pengiriman ke area Solo dan sekitarnya. Hubungi kami via WhatsApp untuk info ongkir lebih lanjut.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section id="map-section">
+  <div class="map-inner">
+    <div class="map-info">
+      <h2>Mau Cobain Langsung?</h2>
+      <p>Dimsum Jakarta Mas Hari juga buka outlet langsung di depan Kolam Renang Kartika. Cocok untuk yang ingin makan langsung atau takeaway.</p>
+      <div class="map-address">
+        <span>📍</span>
+        <span>Depan Kolam Renang Kartika, Kroyo, Kec. Karangmalang, Kabupaten Sragen, Jawa Tengah 57211</span>
+      </div>
+      <a href="https://wa.me/6282227608986?text=Halo,%20saya%20mau%20tanya%20lokasi%20outlet%20Dimsum%20Jakarta%20Mas%20Hari" class="btn-occasion" target="_blank">
+        📍 Tanya Rute via WhatsApp
+      </a>
+    </div>
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=H28F%2BFMG,+Kroyo,+Kec.+Karangmalang,+Kabupaten+Sragen,+Jawa+Tengah+57211&output=embed"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA PENUTUP ===== -->
+<section id="cta-penutup">
+  <div class="container" style="position:relative;z-index:1;">
+    <h2>Pesan Dimsum Sekarang</h2>
+    <p>Klik WhatsApp untuk cek menu dan slot produksi hari ini. Kami siap melayani pesanan Anda!</p>
+    <a href="https://wa.me/6282227608986?text=Halo,%20saya%20mau%20pesan%20dimsum%20dari%20website" class="btn-final-wa" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4zM3.8 6h16.4M16 10a4 4 0 01-8 0"/></svg>
+      Order Sekarang
+    </a>
+  </div>
+</section>
+
+<!-- ===== ARTIKEL BLOG ===== -->
+<section id="artikel" style="background:#fff9c4; padding:80px 20px;">
+  <div class="container">
+    <h2 class="section-title reveal">Tips & Info Seputar Dimsum</h2>
+    <p class="section-sub reveal">Baca artikel terbaru tentang dimsum, catering, dan kuliner Sragen.</p>
+    <div class="artikel-grid reveal" style="
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:28px;
+      margin-top:40px;
+      max-width:900px;
+      margin-left:auto;
+      margin-right:auto;
+    ">
+
+      <!-- ARTIKEL 1 -->
+      <a href="artikel-dimsum-sragen.html" class="artikel-card" style="
+        background:white;
+        border-radius:20px;
+        overflow:hidden;
+        text-decoration:none;
+        box-shadow:0 4px 20px rgba(232,21,26,0.1);
+        border-top:4px solid #E8151A;
+        transition:transform 0.2s, box-shadow 0.2s;
+        display:block;
+      " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(232,21,26,0.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(232,21,26,0.1)'">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735480/Hero-01_htzunz.png"
+          alt="Dimsum Sragen halal homemade enak murah"
+          title="Dimsum Sragen Terbaik – Halal, Homemade, Harga Terjangkau"
+          style="width:100%;height:180px;object-fit:cover;">
+        <div style="padding:20px;">
+          <span style="font-size:0.72rem;font-weight:700;color:#E8151A;text-transform:uppercase;letter-spacing:1px;">Kuliner Sragen</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#B5000A;margin:8px 0 10px;line-height:1.4;">Dimsum Sragen Terenak: Homemade, Halal & Siap Antar ke Lokasi Acara Anda</h3>
+          <p style="font-size:0.82rem;color:#9B2020;line-height:1.6;">Cari dimsum enak di Sragen? Dimsum Jakarta Mas Hari hadir dengan cita rasa autentik, bahan segar, dan harga yang bersahabat untuk semua kebutuhan acara Anda...</p>
+          <div style="margin-top:14px;font-size:0.75rem;color:#aaa;">📅 Mei 2025 · ⏱ 7 menit baca</div>
+        </div>
+      </a>
+
+      <!-- ARTIKEL 2 -->
+      <a href="artikel-catering-dimsum-wedding.html" class="artikel-card" style="
+        background:white;
+        border-radius:20px;
+        overflow:hidden;
+        text-decoration:none;
+        box-shadow:0 4px 20px rgba(232,21,26,0.1);
+        border-top:4px solid #E8151A;
+        transition:transform 0.2s, box-shadow 0.2s;
+        display:block;
+      " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(232,21,26,0.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(232,21,26,0.1)'">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735485/Hero-02_ndn2b4.png"
+          alt="catering dimsum wedding hajatan Sragen murah"
+          title="Catering Dimsum untuk Wedding dan Hajatan di Sragen"
+          style="width:100%;height:180px;object-fit:cover;">
+        <div style="padding:20px;">
+          <span style="font-size:0.72rem;font-weight:700;color:#E8151A;text-transform:uppercase;letter-spacing:1px;">Catering Acara</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#B5000A;margin:8px 0 10px;line-height:1.4;">Catering Dimsum untuk Wedding & Hajatan di Sragen: Hemat, Elegan, dan Disukai Semua Tamu</h3>
+          <p style="font-size:0.82rem;color:#9B2020;line-height:1.6;">Merencanakan catering pernikahan atau hajatan? Dimsum bisa jadi pilihan snack premium yang hemat biaya namun tetap berkesan untuk tamu undangan Anda...</p>
+          <div style="margin-top:14px;font-size:0.75rem;color:#aaa;">📅 Mei 2025 · ⏱ 8 menit baca</div>
+        </div>
+      </a>
+
+      <!-- ARTIKEL 3 -->
+      <a href="artikel-frozen-dimsum-reseller.html" class="artikel-card" style="
+        background:white;
+        border-radius:20px;
+        overflow:hidden;
+        text-decoration:none;
+        box-shadow:0 4px 20px rgba(232,21,26,0.1);
+        border-top:4px solid #E8151A;
+        transition:transform 0.2s, box-shadow 0.2s;
+        display:block;
+      " onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 12px 32px rgba(232,21,26,0.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(232,21,26,0.1)'">
+        <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735482/Hero-03_ai7ewc.png"
+          alt="frozen dimsum reseller supplier Sragen murah"
+          title="Peluang Bisnis Frozen Dimsum Reseller di Sragen"
+          style="width:100%;height:180px;object-fit:cover;">
+        <div style="padding:20px;">
+          <span style="font-size:0.72rem;font-weight:700;color:#E8151A;text-transform:uppercase;letter-spacing:1px;">Bisnis & Reseller</span>
+          <h3 style="font-family:'Playfair Display',serif;font-size:1.05rem;color:#B5000A;margin:8px 0 10px;line-height:1.4;">Peluang Bisnis Frozen Dimsum: Jadi Reseller Dimsum Jakarta Mas Hari dan Raup Untung dari Rumah</h3>
+          <p style="font-size:0.82rem;color:#9B2020;line-height:1.6;">Mau punya penghasilan tambahan dari rumah? Bisnis frozen dimsum bisa jadi solusi. Modalnya kecil, pasarnya besar, dan produknya sudah terbukti laku di Sragen...</p>
+          <div style="margin-top:14px;font-size:0.75rem;color:#aaa;">📅 Mei 2025 · ⏱ 7 menit baca</div>
+        </div>
+      </a>
+
+      <!-- SLOT KOSONG / placeholder artikel ke-4 -->
+      <div style="background:white;border-radius:20px;border:2px dashed #FFD700;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;min-height:300px;">
+        <div style="font-size:2.5rem;margin-bottom:12px;">✍️</div>
+        <p style="font-weight:700;color:#E8151A;font-size:0.9rem;">Artikel Berikutnya</p>
+        <p style="font-size:0.8rem;color:#9B2020;margin-top:6px;">Segera hadir — konten baru seputar dimsum dan kuliner Sragen.</p>
+      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:36px;">
+      <a href="blog.html" style="
+        display:inline-block;
+        background:#E8151A;
+        color:white;
+        padding:13px 32px;
+        border-radius:50px;
+        font-weight:700;
+        font-size:0.95rem;
+        text-decoration:none;
+        box-shadow:0 6px 20px rgba(232,21,26,0.35);
+      ">Lihat Semua Artikel →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p>© 2025 <span>Dimsum Jakarta Mas Hari</span> — Supplier & Produsen Dimsum Terbaik di Sragen</p>
+  <p style="margin-top:6px;">Kroyo, Kec. Karangmalang, Kabupaten Sragen, Jawa Tengah</p>
+</footer>
+
+<!-- ===== FLOATING WA ===== -->
+<div id="float-wa">
+  <a href="https://wa.me/6282227608986?text=Halo,%20saya%20mau%20tanya%20menu%20Dimsum%20Jakarta%20Mas%20Hari" class="float-wa-btn" target="_blank" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.558 4.14 1.535 5.873L.057 23.5l5.76-1.508A11.953 11.953 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.89 0-3.667-.5-5.2-1.376l-.373-.222-3.419.897.911-3.328-.243-.386A9.955 9.955 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+  </a>
+</div>
+
+<!-- ===== LIVE CHECKOUT POPUP ===== -->
+<div id="live-checkout">
+  <div class="checkout-avatar">🥟</div>
+  <div class="checkout-text">
+    <strong id="lc-name">Doni</strong> baru saja checkout<br>
+    <span id="lc-product">Dimsum Mentai Premium</span><br>
+    <small>beberapa menit yang lalu</small>
+  </div>
+</div>
+
+<script>
+  // ===== HERO SLIDER =====
+  let currentSlide = 0;
+  const totalSlides = 7;
+  const slides = document.getElementById('heroSlides');
+  const dots = document.querySelectorAll('.hero-dot');
+
+  function goSlide(n) {
+    currentSlide = n;
+    slides.style.transform = `translateX(-${n * (100/7)}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === n));
+  }
+
+  setInterval(() => {
+    goSlide((currentSlide + 1) % totalSlides);
+  }, 4000);
+
+  // ===== PRODUCT QTY =====
+  function changeQty(id, delta) {
+    const el = document.getElementById(id);
+    let val = parseInt(el.textContent) + delta;
+    if (val < 1) val = 1;
+    el.textContent = val;
+    const num = id.replace('q', '');
+    const btn = document.getElementById('co' + num);
+    const note = document.getElementById('note' + num);
+    if (val < 5) {
+      btn.disabled = true;
+      note.textContent = '⚠️ Minimum order 5 pax';
+    } else {
+      btn.disabled = false;
+      note.textContent = '';
+    }
+  }
+
+  // ===== VARIANT SELECTION =====
+  function selectVar(groupId, el) {
+    document.querySelectorAll('#' + groupId + ' .variant-chip').forEach(c => c.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ===== CHECKOUT =====
+  function checkout(name, price, qtyId, varId) {
+    const qty = parseInt(document.getElementById(qtyId).textContent);
+    const varEl = document.querySelector('#' + varId + ' .selected');
+    const variant = varEl ? varEl.textContent : '';
+    const total = price * qty;
+    const priceFormatted = (price / 1000).toFixed(0) + ' rb';
+    const totalFormatted = (total / 1000).toFixed(0) + ' rb';
+    const msg = `Halo, saya mau order :\n\n${name} (${variant}) = ${qty} pax\nHarga = ${priceFormatted}\nTotal = ${totalFormatted}\n\nTransfer kemana?`;
+    window.open('https://wa.me/6282227608986?text=' + encodeURIComponent(msg), '_blank');
+  }
+
+  // ===== FAQ =====
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // ===== SCROLL REVEAL =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ===== LIVE CHECKOUT POPUP =====
+  const checkouts = [
+    { name: 'Doni', product: 'Dimsum Mentai Premium' },
+    { name: 'Sisca', product: 'Dimsum Original' },
+    { name: 'Rina', product: 'Dimsum Premium' },
+    { name: 'Aldi', product: 'Dimsum Mentai Original' },
+    { name: 'Budi', product: 'Dimsum Original' },
+    { name: 'Ayu', product: 'Dimsum Mentai Premium' },
+  ];
+  let lcIndex = 0;
+  const lc = document.getElementById('live-checkout');
+
+  function showLiveCheckout() {
+    const item = checkouts[lcIndex % checkouts.length];
+    document.getElementById('lc-name').textContent = item.name;
+    document.getElementById('lc-product').textContent = item.product;
+    lc.classList.add('show');
+    setTimeout(() => lc.classList.remove('show'), 4000);
+    lcIndex++;
+  }
+
+  setTimeout(() => {
+    showLiveCheckout();
+    setInterval(showLiveCheckout, 8000);
+  }, 3000);
+</script>
+</body>
+</html>

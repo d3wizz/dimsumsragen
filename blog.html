@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Artikel Seputar Dimsum Sragen | Dimsum Jakarta Mas Hari</title>
+  <meta name="description" content="Baca artikel terbaru seputar dimsum Sragen, catering wedding hajatan, bisnis reseller frozen dimsum, dan tips kuliner dari Dimsum Jakarta Mas Hari." />
+  <link rel="canonical" href="https://vania99-create.github.io/dimsumsragen/blog.html" />
+  <link rel="icon" href="https://res.cloudinary.com/dyvav3opv/image/upload/v1778732789/file_000000000b9071fa8418a9de08464d58_y0lo8j.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #E8151A;
+      --red-dark: #B5000A;
+      --yellow: #FFD700;
+      --yellow-bg: #FFF9C4;
+      --text: #2D0000;
+      --text-light: #7B1A1A;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Plus Jakarta Sans',sans-serif; background:#C83724; color:var(--text); }
+
+    /* NAV */
+    nav {
+      background: var(--red-dark);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .nav-logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+    .nav-logo img { height:40px; }
+    .nav-logo span { color:var(--yellow); font-weight:800; font-size:0.95rem; }
+    .nav-links { display:flex; gap:20px; }
+    .nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.88rem; font-weight:600; }
+    .nav-links a:hover { color:var(--yellow); }
+    .nav-links a.active { color:var(--yellow); border-bottom: 2px solid var(--yellow); padding-bottom:2px; }
+
+    /* BLOG HERO */
+    .blog-hero {
+      background: var(--red-dark);
+      padding: 70px 24px 50px;
+      text-align: center;
+    }
+    .blog-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      color: var(--yellow);
+      margin-bottom: 12px;
+    }
+    .blog-hero p {
+      color: rgba(255,255,255,0.8);
+      font-size: 1rem;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* MAIN WRAP */
+    .blog-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    /* FEATURED ARTICLE */
+    .featured-label {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--red-dark);
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .featured-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      box-shadow: 0 8px 36px rgba(0,0,0,0.18);
+      margin-bottom: 40px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+    }
+    .featured-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+    .featured-info {
+      padding: 36px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .featured-info .kategori {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .featured-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--red-dark);
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .featured-info p {
+      font-size: 0.88rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .featured-info .meta { font-size:0.75rem; color:#aaa; }
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--red);
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+
+    /* GRID ARTIKEL */
+    .grid-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: var(--yellow);
+      margin-bottom: 24px;
+    }
+
+    .artikel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .artikel-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+      border-top: 4px solid var(--red);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: block;
+    }
+    .artikel-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.18);
+    }
+    .artikel-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    .artikel-card-body { padding: 20px; }
+    .artikel-card-body .kategori {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .artikel-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--red-dark);
+      margin: 8px 0 10px;
+      line-height: 1.4;
+    }
+    .artikel-card-body p {
+      font-size: 0.82rem;
+      color: #666;
+      line-height: 1.65;
+      margin-bottom: 12px;
+    }
+    .artikel-card-body .meta { font-size:0.72rem; color:#aaa; }
+
+    /* COMING SOON */
+    .coming-soon {
+      background: white;
+      border-radius: 20px;
+      border: 2px dashed var(--yellow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      text-align: center;
+      min-height: 320px;
+    }
+    .coming-soon .icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .coming-soon h4 { font-weight: 700; color: var(--red); font-size: 0.9rem; margin-bottom: 6px; }
+    .coming-soon p { font-size: 0.8rem; color: var(--text-light); }
+
+    /* CTA */
+    .blog-cta {
+      background: linear-gradient(135deg, var(--red-dark), var(--red));
+      border-radius: 24px;
+      padding: 48px 36px;
+      text-align: center;
+      margin-top: 56px;
+    }
+    .blog-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--yellow);
+      margin-bottom: 10px;
+    }
+    .blog-cta p {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+    }
+    .blog-cta a {
+      background: var(--yellow);
+      color: var(--red-dark);
+      padding: 14px 34px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 0.97rem;
+      text-decoration: none;
+      display: inline-block;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .blog-cta a:hover { transform: translateY(-3px); }
+
+    /* RESPONSIVE */
+    @media(max-width: 680px) {
+      .featured-card { grid-template-columns: 1fr; }
+      .featured-card img { min-height: 220px; height: 220px; }
+      .featured-info { padding: 24px 20px; }
+      .artikel-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--red-dark);
+      color: rgba(255,255,200,0.8);
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.82rem;
+    }
+    footer span { color: var(--yellow); font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778732789/file_000000000b9071fa8418a9de08464d58_y0lo8j.png" alt="Logo Dimsum Jakarta Mas Hari" />
+    <span>Dimsum Jakarta Mas Hari</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Beranda</a>
+    <a href="blog.html" class="active">Artikel</a>
+    <a href="index.html#menu">Menu</a>
+    <a href="index.html#map-section">Lokasi</a>
+  </div>
+</nav>
+
+<!-- BLOG HERO -->
+<div class="blog-hero">
+  <h1>Tips, Info &amp; Inspirasi Seputar Dimsum</h1>
+  <p>Artikel terbaru tentang kuliner dimsum Sragen, catering acara, bisnis reseller, dan segala hal yang perlu Anda tahu sebelum memesan.</p>
+</div>
+
+<div class="blog-wrap">
+
+  <!-- ARTIKEL FEATURED -->
+  <div class="featured-label">⭐ Artikel Pilihan</div>
+  <a href="artikel-dimsum-sragen.html" class="featured-card">
+    <img
+      src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735480/Hero-01_htzunz.png"
+      alt="Dimsum Sragen halal homemade terenak Dimsum Jakarta Mas Hari"
+      title="Dimsum Sragen Terenak – Halal, Homemade, Siap Antar"
+    />
+    <div class="featured-info">
+      <div class="kategori">Kuliner Sragen</div>
+      <h2>Dimsum Sragen Terenak: Homemade, Halal &amp; Siap Antar ke Lokasi Acara Anda</h2>
+      <p>Cari dimsum enak di Sragen? Kami ceritakan apa yang membuat Dimsum Jakarta Mas Hari jadi pilihan utama ratusan pelanggan — dari bahan, proses, hingga variannya.</p>
+      <div class="meta">📅 Mei 2025 · ⏱ 7 menit baca</div>
+      <span class="read-more">Baca Selengkapnya →</span>
+    </div>
+  </a>
+
+  <!-- GRID ARTIKEL -->
+  <p class="grid-title">Artikel Terbaru</p>
+  <div class="artikel-grid">
+
+    <!-- Artikel 2 -->
+    <a href="artikel-catering-dimsum-wedding.html" class="artikel-card">
+      <img
+        src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735485/Hero-02_ndn2b4.png"
+        alt="catering dimsum wedding hajatan Sragen murah elegan"
+        title="Catering Dimsum Wedding Hajatan Sragen – Hemat dan Elegan"
+      />
+      <div class="artikel-card-body">
+        <div class="kategori">Catering Acara</div>
+        <h3>Catering Dimsum untuk Wedding &amp; Hajatan di Sragen: Hemat, Elegan, Disukai Semua Tamu</h3>
+        <p>Dimsum bisa jadi pilihan snack premium yang hemat untuk acara besar. Simak panduan lengkap memilih catering dimsum yang tepat untuk pernikahan atau hajatan Anda.</p>
+        <div class="meta">📅 Mei 2025 · ⏱ 8 menit baca</div>
+      </div>
+    </a>
+
+    <!-- Artikel 3 -->
+    <a href="artikel-frozen-dimsum-reseller.html" class="artikel-card">
+      <img
+        src="https://res.cloudinary.com/dyvav3opv/image/upload/v1778735482/Hero-03_ai7ewc.png"
+        alt="bisnis frozen dimsum reseller supplier Sragen modal kecil untung besar"
+        title="Bisnis Frozen Dimsum Reseller Sragen – Modal Kecil Untung Besar"
+      />
+      <div class="artikel-card-body">
+        <div class="kategori">Bisnis &amp; Reseller</div>
+        <h3>Bisnis Frozen Dimsum: Jadi Reseller dan Raup Untung dari Rumah</h3>
+        <p>Mau penghasilan tambahan dari rumah? Bisnis reseller frozen dimsum adalah peluang nyata dengan modal kecil, pasar luas, dan produk yang sudah terbukti laku.</p>
+        <div class="meta">📅 Mei 2025 · ⏱ 7 menit baca</div>
+      </div>
+    </a>
+
+    <!-- Artikel 4 - Coming Soon -->
+    <div class="coming-soon">
+      <div class="icon">✍️</div>
+      <h4>Artikel Berikutnya</h4>
+      <p>Segera hadir — konten baru seputar dimsum, kuliner Sragen, dan tips bisnis kuliner dari dapur kami.</p>
+    </div>
+
+    <!-- Artikel 5 - Coming Soon -->
+    <div class="coming-soon">
+      <div class="icon">📝</div>
+      <h4>Segera Hadir</h4>
+      <p>Kami sedang menyiapkan artikel berkualitas tentang tips memilih dimsum terbaik dan cara menyajikannya untuk acara spesial.</p>
+    </div>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="blog-cta">
+    <h3>Siap Pesan Dimsum Sekarang?</h3>
+    <p>Jangan cuma baca artikelnya — rasakan langsung dimsumnya! Hubungi kami via WhatsApp untuk pesan atau konsultasi gratis.</p>
+    <a href="https://wa.me/6282227608986?text=Halo%20Mas%20Hari%2C%20saya%20baca%20artikel%20di%20blog%20dan%20ingin%20tanya%20lebih%20lanjut." target="_blank">
+      🥟 Chat WhatsApp Sekarang
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 <span>Dimsum Jakarta Mas Hari</span> — Supplier & Produsen Dimsum Terbaik di Sragen</p>
+  <p style="margin-top:6px;">Depan Kolam Renang Kartika, Kroyo, Kec. Karangmalang, Sragen &nbsp;|&nbsp; <a href="index.html" style="color:var(--yellow);">Kembali ke Beranda</a></p>
+</footer>
+
+</body>
+</html>
