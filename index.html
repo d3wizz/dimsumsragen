@@ -33,157 +33,196 @@
       overflow-x: hidden;
     }
 
-    /* ===== HERO ===== */
-    #hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      min-height: 600px;
-      overflow: hidden;
-    }
+   /* ===== HERO ===== */
+#hero {
+  position: relative;
+  width: 100%;
+  height: 38vh; /* lebih pendek seperti KFC */
+  min-height: 320px;
+  max-height: 520px;
+  overflow: hidden;
+  background: #111;
+}
 
-    .hero-slides {
-      display: flex;
-      width: 700%;
-      height: 100%;
-      transition: transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
-    }
+/* Desktop */
+@media (min-width: 768px) {
+  #hero {
+    height: 55vh;
+    min-height: 420px;
+    max-height: 650px;
+  }
+}
 
-    .hero-slide {
-      width: calc(100% / 7);
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      flex-shrink: 0;
-    }
+.hero-slides {
+  display: flex;
+  width: 700%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.77, 0, 0.18, 1);
+}
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.70) 0%, rgba(0,0,0,0.15) 45%, rgba(0,0,0,0.0) 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 0 20px;
-      z-index: 2;
-    }
+.hero-slide {
+  width: calc(100% / 7);
+  height: 100%;
+  flex-shrink: 0;
 
-    .hero-logo {
-      width: 160px;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
-      animation: fadeDown 0.8s ease both;
-    }
+  /* supaya gambar full tidak kepotong */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #111;
+}
 
-    .hero-headline {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.8rem, 5vw, 3.8rem);
-      font-weight: 900;
-      color: var(--yellow);
-      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
-      line-height: 1.15;
-      margin-bottom: 14px;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.25) 45%,
+    rgba(0,0,0,0.05) 100%
+  );
 
-    .hero-sub {
-      font-size: clamp(0.88rem, 1.8vw, 1.05rem);
-      color: #ffe9c0;
-      max-width: 580px;
-      margin-bottom: 26px;
-      line-height: 1.65;
-      animation: fadeUp 0.8s 0.35s ease both;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    .hero-cta {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
-      animation: fadeUp 0.8s 0.5s ease both;
-    }
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
 
-    .btn-wa {
-      background: var(--red);
-      color: white;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 6px 20px rgba(232,21,26,0.45);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(232,21,26,0.55); }
+.hero-logo {
+  width: 130px;
+  height: auto;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,0.5));
+  animation: fadeDown 0.8s ease both;
+}
 
-    .btn-menu {
-      background: transparent;
-      color: var(--yellow);
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 1rem;
-      text-decoration: none;
-      border: 2px solid var(--yellow);
-      box-shadow: 0 6px 20px rgba(255,215,0,0.2);
-      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-    }
-    .btn-menu:hover { transform: translateY(-2px); background: rgba(255,215,0,0.12); box-shadow: 0 10px 28px rgba(255,215,0,0.3); }
+/* Desktop logo */
+@media (min-width: 768px) {
+  .hero-logo {
+    width: 170px;
+  }
+}
 
-    .hero-highlights {
-      position: absolute;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-      z-index: 3;
-      animation: fadeUp 0.8s 0.7s ease both;
-    }
+.hero-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--yellow);
+  text-shadow: 0 4px 30px rgba(0,0,0,0.7);
+  line-height: 1.15;
+  margin-bottom: 12px;
+  animation: fadeUp 0.8s 0.2s ease both;
+}
 
-    .highlight-pill {
-      background: rgba(255,215,0,0.18);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,215,0,0.4);
-      color: var(--yellow-light);
-      padding: 7px 16px;
-      border-radius: 30px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
+.hero-sub {
+  font-size: clamp(0.82rem, 1.6vw, 1rem);
+  color: #ffe9c0;
+  max-width: 620px;
+  margin-bottom: 20px;
+  line-height: 1.55;
+  animation: fadeUp 0.8s 0.35s ease both;
+}
 
-    .hero-dots {
-      position: absolute;
-      bottom: 80px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 3;
-    }
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.8s 0.5s ease both;
+}
 
-    .hero-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-    .hero-dot.active {
-      background: var(--yellow);
-      width: 24px;
-      border-radius: 4px;
-    }
+.btn-wa {
+  background: var(--red);
+  color: white;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 6px 20px rgba(232,21,26,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-wa:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(232,21,26,0.55);
+}
+
+.btn-menu {
+  background: transparent;
+  color: var(--yellow);
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid var(--yellow);
+  box-shadow: 0 6px 20px rgba(255,215,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-menu:hover {
+  transform: translateY(-2px);
+  background: rgba(255,215,0,0.12);
+  box-shadow: 0 10px 28px rgba(255,215,0,0.3);
+}
+
+.hero-highlights {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 3;
+  animation: fadeUp 0.8s 0.7s ease both;
+}
+
+.highlight-pill {
+  background: rgba(255,215,0,0.18);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,215,0,0.4);
+  color: var(--yellow-light);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.hero-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 3;
+}
+
+.hero-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-dot.active {
+  background: var(--yellow);
+  width: 24px;
+  border-radius: 4px;
+}
 
     /* ===== SECTION BASE ===== */
     section { padding: 80px 20px; }
