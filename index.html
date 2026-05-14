@@ -794,34 +794,37 @@
     #klien {
       background: linear-gradient(135deg, var(--red-dark) 0%, var(--red) 100%);
       text-align: center;
+      padding: 40px 20px;
     }
 
-    #klien .section-title { color: var(--yellow); }
-    #klien .section-sub { color: rgba(255,255,255,0.7); }
+    #klien .section-title { color: var(--yellow); font-size: 1.2rem; margin-bottom: 6px; }
+    #klien .section-sub { color: rgba(255,255,255,0.7); font-size: 0.82rem; margin-bottom: 20px; }
 
     .klien-grid {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 8px;
       justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .klien-chip {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,215,0,0.3);
-      color: rgba(255,255,255,0.85);
-      padding: 10px 24px;
-      border-radius: 12px;
-      font-size: 0.9rem;
+      color: rgba(255,255,255,0.9);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.78rem;
       font-weight: 600;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
       transition: all 0.2s;
     }
 
     .klien-chip:hover {
-      background: rgba(255,215,0,0.12);
+      background: rgba(255,215,0,0.15);
       border-color: var(--yellow);
       color: var(--yellow);
     }
@@ -1689,14 +1692,28 @@
   }
 
   // ===== CHECKOUT =====
+  function formatRupiah(angka) {
+    return 'Rp ' + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+  }
+
   function checkout(name, price, qtyId, varId) {
-    const qty = parseInt(document.getElementById(qtyId).textContent);
+    const inputEl = document.getElementById(qtyId);
+    const qty = parseInt(inputEl.value) || parseInt(inputEl.textContent) || 5;
     const varEl = document.querySelector('#' + varId + ' .selected');
-    const variant = varEl ? varEl.textContent : '';
+    const variant = varEl ? ' - ' + varEl.textContent.trim() : '';
     const total = price * qty;
-    const priceFormatted = (price / 1000).toFixed(0) + ' rb';
-    const totalFormatted = (total / 1000).toFixed(0) + ' rb';
-    const msg = `Halo, saya mau order :\n\n${name} (${variant}) = ${qty} pax\nHarga = ${priceFormatted}\nTotal = ${totalFormatted}\n\nTransfer kemana?`;
+
+    const msg =
+`Halo Mas Hari, saya mau order Dimsum 🥟
+
+📦 Jenis  : ${name}${variant}
+🔢 Qty    : ${qty} pax
+💰 Harga  : ${formatRupiah(price)} / pax
+💵 Total  : ${formatRupiah(total)}
+
+Mohon info transfer ke rekening mana?
+Terima kasih 🙏`;
+
     window.open('https://wa.me/6282227608986?text=' + encodeURIComponent(msg), '_blank');
   }
 
