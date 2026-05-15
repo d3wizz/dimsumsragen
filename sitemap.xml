@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- HALAMAN UTAMA -->
+  <url>
+    <loc>https://www.dimsumsragen.com/</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- HALAMAN BLOG -->
+  <url>
+    <loc>https://www.dimsumsragen.com/blog.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- ARTIKEL 1 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-dimsum-sragen.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ARTIKEL 2 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-catering-dimsum-wedding.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ARTIKEL 3 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-frozen-dimsum-reseller.html</loc>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ARTIKEL 4 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-dimsum-mentai-sragen.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
