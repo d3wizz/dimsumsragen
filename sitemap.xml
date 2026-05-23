@@ -81,4 +81,20 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- ARTIKEL 9 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-jual-dimsum-online-sragen.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ARTIKEL 10 -->
+  <url>
+    <loc>https://www.dimsumsragen.com/artikel-tempat-makan-dimsum-otentik-sragen.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
